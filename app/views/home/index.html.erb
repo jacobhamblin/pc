@@ -1,7 +1,21 @@
-<h1>Tacocopter SQL Training</h1>
+<form action="<%= stores_url %>" method="get">
+  <h3>Select Tacos to Find</h3>
 
-<ul>
-  <li><%= link_to "Connecting", connecting_path %></li>
-  <li><%= link_to "Schema", schema_path %></li>
-  <li><%= link_to "Questions", questions_path %></li>
-</ul>
+  <ul>
+    <% @tacos.each do |taco| %>
+      <input type="checkbox" name="taco[name][]" id="<%= taco.name %>" value="<%= taco.name %>">
+      <label for="<%= taco.name %>"><%= taco.name %></label><br/>
+    <% end %>
+  </ul>
+
+  <h3>Select Sauces to Find</h3>
+
+  <ul>
+    <% @salsas.each do |salsa| %>
+      <input type="checkbox" name="salsa[name][]" id="<%= salsa.name %>" value="<%= salsa.name %>">
+      <label for="<%= salsa.name %>"><%= salsa.name %></label><br/>
+    <% end %>
+  </ul>
+
+  <input type="submit" value="Search">
+</form>
