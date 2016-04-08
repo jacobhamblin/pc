@@ -27,8 +27,8 @@ gem 'rails_12factor'
 gem 'text-table'
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
   gem 'pry-rails'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
